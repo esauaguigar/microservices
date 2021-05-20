@@ -1,9 +1,10 @@
 <?php
-	$user=$_POST['finger'];
-	$name=$_POST['name'];
-	$url = 'http://backend/api_gw/api/edit_user.php';
+
+if( isset($_POST['finger']) ){
+	$finger=$_POST['finger'];
+	$url = 'http://registry/api_gw/api/exit.php';
 	// Collection object
-	$data = 'finger='.$user."&name=".$name;
+	$data = 'finger='.$finger;
 	// Initializes a new cURL session
 	$curl = curl_init($url);
 	// Set the CURLOPT_RETURNTRANSFER option to true
@@ -21,3 +22,4 @@
 	// Close cURL session
 	curl_close($curl);
 	echo $response;
+}

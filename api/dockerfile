@@ -1,13 +1,13 @@
 FROM php:7.4-apache
 
 	WORKDIR /var/www/html
-	COPY ./users/files/ ./api/
+	COPY ./api/files/ ./api/
 
 	RUN chmod -R 755 api
 	RUN chown -R www-data:www-data api
 
 	WORKDIR /etc/apache2/sites-available/
-	COPY ./users/api.conf .
+	COPY ./api/api.conf .
 	RUN a2ensite api.conf
 	RUN service apache2 restart
 

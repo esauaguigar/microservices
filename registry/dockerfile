@@ -1,15 +1,16 @@
 FROM php:7.4-apache
+	RUN docker-php-ext-install mysqli
 	RUN apachectl restart
 
 	WORKDIR /var/www/html
-	COPY ./registry/files/ ./api/
+	COPY ./registry/files/api_gw ./api_gw/
 
-	RUN chmod -R 755 api
-	RUN chown -R www-data:www-data api
+	RUN chmod -R 755 api_gw
+	RUN chown -R www-data:www-data api_gw
 
 	WORKDIR /etc/apache2/sites-available/
-	COPY ./registry/api.conf .
-	RUN a2ensite api.conf
+	COPY ./registry/api_gw.conf .
+	RUN a2ensite api_gw.conf
 	RUN service apache2 restart
 
 	EXPOSE 80

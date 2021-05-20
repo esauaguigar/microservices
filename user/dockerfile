@@ -3,13 +3,13 @@ FROM php:7.4-apache
 	RUN apachectl restart
 
 	WORKDIR /var/www/html
-	COPY ./backend/files/api_gw ./api_gw/
+	COPY ./user/files/api_gw ./api_gw/
 
 	RUN chmod -R 755 api_gw
 	RUN chown -R www-data:www-data api_gw
 
 	WORKDIR /etc/apache2/sites-available/
-	COPY ./backend/api_gw.conf .
+	COPY ./user/api_gw.conf .
 	RUN a2ensite api_gw.conf
 	RUN service apache2 restart
 

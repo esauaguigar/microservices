@@ -5,7 +5,7 @@ if( isset($_POST['name']) and isset($_POST['finger']) ){
 	$finger=$_POST['finger'];
 
 	$user=$_POST['finger'];
-	$url = 'http://backend/api_gw/api/new_user.php';
+	$url = 'http://user/api_gw/api/new_user.php';
 	// Collection object
 	$data = 'finger='.$user."&name=".$nombre;
 	// Initializes a new cURL session

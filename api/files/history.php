@@ -1,6 +1,6 @@
 <?php
 // kvstore API url
-$url = 'http://backend/api_gw/api/users.php';
+$url = 'http://registry/api_gw/api/history.php';
 $curl = curl_init($url);
 // Set custom headers for RapidAPI Auth and Content-Type header
 curl_setopt($curl, CURLOPT_HTTPHEADER, [
