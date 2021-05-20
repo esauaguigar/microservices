@@ -1,0 +1,15 @@
+FROM php:7.4-apache
+	RUN apachectl restart
+
+	WORKDIR /var/www/html
+	COPY ./registry/files/ ./api/
+
+	RUN chmod -R 755 api
+	RUN chown -R www-data:www-data api
+
+	WORKDIR /etc/apache2/sites-available/
+	COPY ./registry/api.conf .
+	RUN a2ensite api.conf
+	RUN service apache2 restart
+
+	EXPOSE 80
