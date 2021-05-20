@@ -8,14 +8,14 @@
 POST
 
 Registry service
-- for check all hiistory
-http://localhost:8082/api/history.php
+- for check all history
+http://localhost:8081/api/history.php
 
 - url to record arrival hour
-http://localhost:8082/api/entrance.php?finger=
+http://localhost:8081/api/entrance.php?finger=
 
 - to record the departure time
-http://localhost:8082/api/exit.php?finger=
+http://localhost:8081/api/exit.php?finger=
 
 
 Users service
@@ -34,8 +34,6 @@ http://localhost:8081/api/edit_user.php?name=&finger=
 
 browser:
 ![1](./images/1.png)
-![2](./images/2.png)
 
 postman
-![3](./images/3.png)
 ![4](./images/4.png)
